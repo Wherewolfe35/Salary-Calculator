@@ -19,21 +19,26 @@ function collectInfo() {
     let idNum = $('#idNum').val();
     let jTitle = $('#jTitle').val();
     let aSalary = $('#aSalary').val();
-    totalSalary += +(aSalary);
-    $('#tableBody').append(`<tr><td>${firstName}</td><td>${lastName}</td><td>#${idNum}</td><td>${jTitle}</td><td id="aSalaryText">${aSalary}</td><td><button id="delBtn">Delete</button><td></tr>`);
-    $('#fName').val('');
-    $('#lName').val('');
-    $('#idNum').val('');
-    $('#jTitle').val('');
-    $('#aSalary').val('');
-    monthlySal();
+    if (firstName === '' || lastName === '' || idNum === '' || jTitle === '' || aSalary === '') {
+        alert('All fields are not filled out.');
+        return false;
+    } else {
+        totalSalary += +(aSalary);
+        $('#tableBody').append(`<tr><td>${firstName}</td><td>${lastName}</td><td>#${idNum}</td><td>${jTitle}</td><td id="aSalaryText">${aSalary}</td><td><button id="delBtn">Delete</button><td></tr>`);
+        $('#fName').val('');
+        $('#lName').val('');
+        $('#idNum').val('');
+        $('#jTitle').val('');
+        $('#aSalary').val('');
+        monthlySal();
+    }
 }
 
 //calculate monthly salary cost, append it to the DOM, and flag red if over $20k
 function monthlySal() {
-    monthlySalary = parseInt(totalSalary/12);
+    monthlySalary = parseInt(totalSalary / 12);
     $('#monthlyCost').text('$' + monthlySalary);
-    if(monthlySalary > 20000){
+    if (monthlySalary > 20000) {
         $('#monthlyCost').addClass('overBudget');
     }
 }
