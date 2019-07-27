@@ -9,3 +9,8 @@ header {
 input{
     max-width: 100px; 
 }
+
+h6{
+    font-size: 7px;
+    font-family: 'Courier New', Courier, monospace;
+}
