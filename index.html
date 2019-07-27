@@ -10,21 +10,23 @@
     <script src="script.js"></script>
     <title>Salary Calculator</title>
 </head>
-<body>
-    <header>
+<body class="card-body">
+    <header class="card-header">
         <h1>Salary Calculator</h1>
     </header>
     <main>
         <!-- an input form that collects employee first name, last name, ID number, job title, annual salary. -->
+        <section class="container container-fluid">
             First name: <input type="text" placeholder="First" id="fName">
             Last name: <input type="text" placeholder="Last" id="lName">
             ID number: <input type="text" placeholder="ID" id="idNum">
             Job title: <input type="text" placeholder="Title" id="jTitle">
             Annual salary: <input type="number" placeholder="Salary" id="aSalary">
             <button type="submit" id="submitBtn">Submit</button>
-        <div>
-            <table>
-                <thead id="tableHead">
+        </section>
+        <section>
+            <table class="table table-success">
+                <thead id="tableHead" class = "thead">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -38,7 +40,7 @@
 
                 </tbody>
             </table>
-        </div>
+        </section>
         <footer>
             <p>Total monthly cost: <span id = "monthlyCost"></span></p>
         </footer>

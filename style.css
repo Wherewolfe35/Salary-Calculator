@@ -1,3 +1,11 @@
 .overBudget{
     background-color: red;
 }
+
+header {
+    text-align: center;
+}
+
+input{
+    max-width: 100px; 
+}
